@@ -1,4 +1,4 @@
-# everything ready for compiling, but can do ml gcc/9.1.0 intel/19.1.1 impi/19.0.7
+# check if everything is ready for compiling, otherwise do ml gcc/9.1.0 intel/19.1.1 impi/19.0.7 or whatever necessary for compiling with MPI
 
 CXX = mpicxx
 
