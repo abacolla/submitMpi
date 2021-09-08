@@ -1,0 +1,3 @@
+bash oneCommand.sh
+bash twoCommand.sh
+bash threeCommand.sh
