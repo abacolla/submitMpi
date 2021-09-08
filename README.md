@@ -16,4 +16,8 @@ Synopsis: Start a parallel job reading from a parametric file
 
 Usage: vga_param_job <param_file>
 
-Note: The parametric file contains an n number of lines, each executing a command or an executable file. The number of lines n = number of processors to request.
+Note: The parametric file contains an n number of lines, each executing a command or an executable file. The number of lines n = number of processors to request. The script uses MPL directives:
+
+``` r
+#include <mpl/mpl.hpp>
+```
