@@ -6,7 +6,7 @@ Molecular & Cellular Oncology
 Houston TX 77033
 abacolla@mdanderson.org
 Sep 2021
-vga_param_job.cxx -- submit parallel job using mpl
+vga_param_jobIt.cxx -- submit parallel job using mpl
 */
 
 #include <iostream>
@@ -70,20 +70,20 @@ int main(int argc, char* argv []) {
     for (int i = 1; i < size; ++i) { // leave process 0 by itself 
       std::string s(v1[i]);
       std::strcpy(arrS, s.c_str());
-      comm.send(arrS, i);
+      comm.send(arrS, arrS + N, i);
     }
   }
 
   for (int i = 1; i <= size; ++i) {    
     if (rank == i) {
-      comm.recv(arr, 0);
+      comm.recv(arr, arr + N, 0);
     }
   }
   std::system(arr);
   const auto end = std::chrono::steady_clock::now();
   std::stringstream outMessage;
   outMessage << proc << " [" << rank << "/" << size << "] finished in " 
-             << std::chrono::duration_cast<std::chrono::minutes>(end - start).count() << " min\n";
+             << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " msec\n";
   std::cout << outMessage.str();
 
   return EXIT_SUCCESS;
