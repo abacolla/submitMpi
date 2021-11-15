@@ -10,7 +10,7 @@ vga_submitMpiJob is a c++ utility with MPI directives used to submit jobs in a p
 
 Compile: Makefile provides the tool to compile vga_submitMpiJob.cpp, simply type "make". This will generate a directory named "build" containing the binary. You will need to preload the MPI modules before you compile and also before you launch the program. 
 
-## vga_param_job
+## vga_param_job and vga_paramIt_job
 
 Synopsis: Start a parallel job reading from a parametric file
 
